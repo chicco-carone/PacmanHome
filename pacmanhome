@@ -1,0 +1,24 @@
+#!/bin/bash
+
+pkgdest=/home/$USER/pacmanhome_packages/packages
+
+mkdir -p $pkgdest
+
+export PKGDEST=$pkgdest
+
+sudo pacman -Syu --needed "$@"
+
+bindir=/home/$USER/pacmanhome_packages/bin
+mkdir -p $bindir
+for package in "$@"
+do
+    package_files=$(pacman -Ql $package | awk '{print $2}' | grep -E '/bin/|/sbin/|/usr/bin/|/usr/sbin/')
+    for file in $package_files
+    do
+        if [ -f $file ]; then
+            cp $file $bindir
+            filename=$(basename $file)
+            chmod +x $bindir/$filename
+        fi
+    done
+done
