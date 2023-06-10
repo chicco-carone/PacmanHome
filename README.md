@@ -50,7 +50,7 @@
 
 <pre><code>cd ~/
 git clone https://github.com/chicco-carone/PacmanHome.git
-cd ~/pacmanhome
+cd ~/PacmanHome
 chmod +x install.sh
 ./install.sh</code></pre>
 
@@ -80,7 +80,7 @@ I recommend adding an automated AUR building repo to gain access to AUR packages
     To uninstall PacmanHome and remove all associated files, open a terminal and run the following commands:
 </p>
 
-<pre><code>cd ~/pacmanhome
+<pre><code>cd ~/PacmanHome
 ./uninstall.sh</code></pre>
 
 <h2 id="todo">ToDo</h2>
