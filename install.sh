@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p /home/$USER/.local/bin
 cp pacmanhome /home/$USER/.local/bin/
 
 echo 'export PACMANHOME_ROOT="/home/$USER/pacmanhome_packages"' >> /home/$USER/.bashrc
